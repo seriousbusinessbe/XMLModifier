@@ -1,0 +1,82 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:annotation>
+		<xsd:documentation xml:lang="en">XML Modifier modificationset schema</xsd:documentation>
+	</xsd:annotation>
+	<xsd:element name="modifications" type="modificationsType" minOccurs="1" maxOccurs="1"/>
+
+	<xsd:complexType name="modificationsType">
+		<xsd:sequence>
+			<xsd:element name="document" type="documentType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="documentType">
+		<xsd:sequence>
+			<xsd:element name="createRootNode" type="createNodeType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="deleteNode" type="deleteNodeType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="updateNode" type="updateNodeType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="deleteAttribute" type="deleteAttributeType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="updateAttribute" type="updateAttributeType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="node" type="nodeType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="sourceFolder" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+		<xsd:attribute name="sourceName" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+		<xsd:attribute name="targetFolder" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+		<xsd:attribute name="targetName" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="nodeType">
+		<xsd:sequence>
+			<xsd:element name="createNode" type="createNodeType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="deleteNode" type="deleteNodeType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="updateNode" type="updateNodeType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="createAttribute" type="createAttributeType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="deleteAttribute" type="deleteAttributeType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="updateAttribute" type="updateAttributeType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="name" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="createNodeType">
+		<xsd:sequence>
+			<xsd:element name="createAttribute" type="createAttributeType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="name" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+	</xsd:complexType>
+
+	<xsd:element name="deleteNodeType">
+		<xsd:complexType>
+			<xsd:attribute name="name" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="updateNodeType">
+		<xsd:complexType>
+			<xsd:attribute name="name" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:attribute name="newName" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="createAttributeType">
+		<xsd:complexType>
+			<xsd:attribute name="name" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:attribute name="value" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="deleteAttributeType">
+		<xsd:complexType>
+			<xsd:attribute name="name" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:attribute name="value" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="updateAttributeType">
+		<xsd:complexType>
+			<xsd:attribute name="name" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+			<xsd:attribute name="value" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+			<xsd:attribute name="newName" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+			<xsd:attribute name="newValue" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

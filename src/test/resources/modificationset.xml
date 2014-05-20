@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!-- xmlns:xsd="http://www.w3.org/2001/XMLSchema" -->
+<modifications xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="modificationset.xsd">
+	<document sourceFolder="" sourceName="" targetFolder="" targetName="">
+		<createRootNode name="">
+			<createAttribute name="" value=""/>
+			<createAttribute name="" value=""/>
+			<createAttribute name="" value=""/>
+		</createRootNode>
+		<deleteNode name="" />
+		<updateNode name="" newName="" />
+
+		<deleteAttribute name="" value="" />
+		<updateAttribute name="" value="" newName="" newValue="" />
+
+		<node name="">
+			<createNode name="">
+				<createAttribute name="" value=""/>
+			</createNode>
+			<deleteNode name="" />
+			<updateNode name="" newName="" />
+
+			<createAttribute name="" value=""/>
+			<deleteAttribute name="" value="" />
+			<updateAttribute name="" value="" newName="" newValue="" />
+		</node>
+	</document>
+</modifications>
